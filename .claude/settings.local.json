@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nohup mvn -q spring-boot:run)",
+      "Bash(curl -s -m 5 http://localhost:8080/api/phrases/random)",
+      "Bash(curl -s -X POST http://localhost:8080/api/phrases/6/answer -H 'Content-Type: application/json' -d '{\"answer\":\"Ich möchte einen Kaffee, bitte\"}')",
+      "Bash(curl -s -X POST http://localhost:8080/api/phrases/6/answer -H 'Content-Type: application/json' -d '{\"answer\":\"Ich mochte einen Kafee bitte\"}')",
+      "Bash(curl -s -X POST http://localhost:8080/api/phrases/6/answer -H 'Content-Type: application/json' -d '{\"answer\":\"Wo ist der Bahnhof\"}')",
+      "Bash(curl -s -X POST http://localhost:8080/api/phrases/6/answer -H 'Content-Type: application/json' -d '{\"answer\":\"ich möchte einen kaffee bitte\"}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -X POST http://localhost:8080/api/phrases/6/answer -H 'Content-Type: application/json' -d '{\"answer\":\"  \"}')",
+      "Bash(python3 -c 'import sys,json; print\\(len\\(json.load\\(sys.stdin\\)\\)\\)')",
+      "Bash(curl -s -X POST http://localhost:8080/api/phrases/31/answer -H 'Content-Type: application/json' -d '{\"answer\":\"ich habe hunger\"}')",
+      "Bash(pkill -f \"sprachmeister\")",
+      "Bash(pkill -f \"spring-boot:run\")",
+      "Bash(java -version)",
+      "Bash(mvn -version)",
+      "Bash(mvn spring-boot:run)",
+      "Bash(curl -s -m 3 http://localhost:8080/api/phrases/random)",
+      "Bash(/usr/libexec/java_home -V)",
+      "Bash(mvn -q dependency:tree -Dincludes=org.projectlombok:lombok)",
+      "Bash(pkill -f \"spring-boot\")",
+      "Bash(sleep 2)",
+      "Bash(export JAVA_HOME=/Users/athuljoseph/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home)",
+      "Bash(mvn -q clean compile)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(export JAVA_HOME=/Users/athuljoseph/Library/Java/JavaVirtualMachines/openjdk-ea-26-ea+33-2879/Contents/Home)",
+      "Bash(timeout 45 mvn -q spring-boot:run)",
+      "Bash(pkill -f spring-boot)"
+    ]
+  }
+}

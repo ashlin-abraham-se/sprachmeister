@@ -1,0 +1,12 @@
+com/germanlearning/sprachmeister/service/LevenshteinUtil.class
+com/germanlearning/sprachmeister/SprachmeisterApplication.class
+com/germanlearning/sprachmeister/dto/PhraseQuestionDto.class
+com/germanlearning/sprachmeister/repository/PhraseRepository.class
+com/germanlearning/sprachmeister/controller/PhraseController.class
+com/germanlearning/sprachmeister/dto/PhraseCreateRequest.class
+com/germanlearning/sprachmeister/config/DataSeeder.class
+com/germanlearning/sprachmeister/model/Phrase$Difficulty.class
+com/germanlearning/sprachmeister/model/Phrase.class
+com/germanlearning/sprachmeister/service/PhraseService.class
+com/germanlearning/sprachmeister/dto/AnswerResponse.class
+com/germanlearning/sprachmeister/dto/AnswerRequest.class

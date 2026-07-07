@@ -1,0 +1,284 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1c2333;
+  --muted: #5b6478;
+  --border: #e3e6ef;
+  --accent: #3b5bdb;
+  --accent-hover: #2f4bc0;
+  --correct: #2b8a3e;
+  --correct-bg: #ebfbee;
+  --close: #e8860c;
+  --close-bg: #fff4e0;
+  --incorrect: #c92a2a;
+  --incorrect-bg: #fff0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161d;
+    --card: #1e2230;
+    --text: #e8eaf2;
+    --muted: #9aa3b8;
+    --border: #2c3245;
+    --accent: #5c7cfa;
+    --accent-hover: #748ffc;
+    --correct-bg: #16301c;
+    --close-bg: #33260e;
+    --incorrect-bg: #341b1b;
+    --correct: #69db7c;
+    --close: #ffc078;
+    --incorrect: #ff8787;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+
+nav {
+  display: inline-flex;
+  gap: 0.25rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+nav button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+/* --- Practice --- */
+
+.scoreboard {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.score-pill {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.score-pill.correct { color: var(--correct); background: var(--correct-bg); }
+.score-pill.close { color: var(--close); background: var(--close-bg); }
+.score-pill.incorrect { color: var(--incorrect); background: var(--incorrect-bg); }
+
+.phrase-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.badge.difficulty-easy { color: var(--correct); background: var(--correct-bg); }
+.badge.difficulty-medium { color: var(--close); background: var(--close-bg); }
+.badge.difficulty-hard { color: var(--incorrect); background: var(--incorrect-bg); }
+
+.prompt-label {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.english-phrase {
+  margin: 0.25rem 0 1.25rem;
+  font-size: 1.4rem;
+}
+
+input[type='text'],
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+input[type='text']:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+button {
+  font-family: inherit;
+}
+
+form > button,
+.add-form button,
+.result button {
+  margin-top: 0.75rem;
+  padding: 0.55rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+form > button:hover,
+.add-form button:hover,
+.result button:hover {
+  background: var(--accent-hover);
+}
+
+form > button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+}
+
+.result-correct { background: var(--correct-bg); }
+.result-close { background: var(--close-bg); }
+.result-incorrect { background: var(--incorrect-bg); }
+
+.result .verdict {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25rem;
+}
+
+.result-correct .verdict { color: var(--correct); }
+.result-close .verdict { color: var(--close); }
+.result-incorrect .verdict { color: var(--incorrect); }
+
+.result p {
+  margin: 0.25rem 0;
+}
+
+.answers {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+/* --- Phrase list / add form --- */
+
+.add-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.add-form input,
+.add-form textarea,
+.add-form select {
+  margin-top: 0.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.saved-note {
+  margin-left: 0.75rem;
+  color: var(--correct);
+}
+
+.phrase-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.phrase-table th,
+.phrase-table td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.phrase-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.error {
+  color: var(--incorrect);
+  background: var(--incorrect-bg);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+}
